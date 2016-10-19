@@ -9,11 +9,20 @@ var li = $('<li class="list-item">' + post.listItem + '</li>');
 var button = $('<button class="delete" type="button">Delete</button>');
 container.append(li, button);
 
+//line-through attempt
+//cross out item
+li.on('click', function(e) {
+  li.css({'text-decoration': 'line-through'});
+});
+li.on('dblclick', function(e) {
+  li.css('text-decoration', 'none');
+});
 
   var settings = {
     url: 'http://tiny-za-server.herokuapp.com/collections/todo_list/',
     type: 'POST',
     success: function(data, status, xhr) {
+
 
     },
     error: function () {
@@ -23,6 +32,7 @@ container.append(li, button);
     data: JSON.stringify(post)
   };
   $.ajax(settings);
+
 }
 
 /////////runtime below:
@@ -34,6 +44,17 @@ var settings = {
     data.forEach(function(list, i, arr) {
       var li = $('<li class="list-item">'+list.listItem+'</li>');
       var button = $('<button class="delete" type="button">Delete</button>');
+//cross out item
+li.on('click', function(e) {
+  li.css({'text-decoration': 'line-through'});
+});
+li.on('dblclick', function(e) {
+  li.css('text-decoration', 'none');
+});
+
+
+
+
       button.on('click', function(e) {
         var settings = {
           url: 'http://tiny-za-server.herokuapp.com/collections/todo_list/'+list._id,
