@@ -1,5 +1,20 @@
 body {
   background-image: url("http://i0.wp.com/www.ucreative.com/wp-content/uploads/2010/08/43-yellow-notebook.jpg?resize=500%2C300");
   font-family: 'Indie Flower', cursive; }
+  body::after {
+    clear: both;
+    display: block;
+    content: ''; }
+
+.incomplete-list {
+  width: 50%;
+  display: inline-block;
+  margin: 0; }
+
+.complete-list {
+  float: right;
+  margin: 0; }
+  .complete-list li {
+    text-decoration: line-through; }
 
 /*# sourceMappingURL=main.css.map */
